@@ -1,4 +1,4 @@
-apparmor==3.1.7
+apparmor
 attrs==23.2.0
 autotiling==1.9.1
 btrfsutil==6.7.1
