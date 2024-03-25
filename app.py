@@ -26,11 +26,19 @@ with c_foto:
 with c_nombre:
     st.title("Cristian Montoya Garces")
 
-    c_linkedin, c_github, c_espacio = st.columns([0.3, 0.3, 0.5])
+    c_linkedin, c_github, c_curriculo_pdf = st.columns(
+        [0.2, 0.2, 0.3,], gap="small")
     with c_linkedin:
         st.link_button(label="LinkedIn", url=social_media["LinkedIn"])
     with c_github:
         st.link_button(label="GitHub", url=social_media["GitHub"])
+    with c_curriculo_pdf:
+        with open("assets/Hoja_de_vida_2024.pdf", "rb") as pdf_file:
+            PDFbyte = pdf_file.read()
+
+        st.download_button(label="Download CV",
+                           data=PDFbyte,
+                           file_name="CV_CristianMG.pdf")
 
 
 infoCurriculum = InfoCurriculum()
